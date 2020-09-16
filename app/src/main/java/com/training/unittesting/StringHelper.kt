@@ -9,7 +9,7 @@ class StringHelper {
         return (first2Chars.replace("A", "")
                 + stringMinusFirst2Chars)
     }
-
+    //       A -> false / AC -> true  / CACA -> true /CDAA -> false
     fun areFirstAndLastTwoCharactersTheSame(str: String): Boolean {
         if (str.length <= 1) return false
         if (str.length == 2) return true
