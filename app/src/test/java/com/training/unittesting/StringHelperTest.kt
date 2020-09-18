@@ -11,7 +11,7 @@ class StringHelperTest {
     @Before
     fun setUp() {
         stringHelper = StringHelper()
-
+        array = arrayOf(3, 2, 0, 1)
     }
 
     @Test
@@ -64,8 +64,12 @@ class StringHelperTest {
 
     @Test
     fun compareArraysTest() {
-        array = arrayOf(3, 2, 0, 1)
         array.sort()
         assertArrayEquals(arrayOf(0, 1, 2, 3), array)
+    }
+
+    @Test(expected = ArrayIndexOutOfBoundsException::class)
+    fun exceptionTest() {
+        array.get(10)
     }
 }
