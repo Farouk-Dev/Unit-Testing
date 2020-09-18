@@ -1,10 +1,23 @@
 package com.training.unittesting
 
-import org.junit.After
-import org.junit.Before
-import org.junit.Test
+import org.junit.*
 
 class QuickBeforeAfterTest {
+
+    companion object {
+        // the beforeClass() method will run just one time before the first test is executed .
+        @BeforeClass
+        fun beforeClass() {
+            println("@BeforeClass")
+        }
+
+        // the afterClass() method will run just one time after all the tests are executed .
+        @AfterClass
+        fun afterClass() {
+            println("@BeforeClass")
+        }
+    }
+
 
     // the setUp() method will run before every test .
     @Before
