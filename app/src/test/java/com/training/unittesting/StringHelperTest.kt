@@ -7,7 +7,7 @@ import org.junit.Test
 class StringHelperTest {
     private lateinit var stringHelper: StringHelper
     private lateinit var array: Array<Int>
-
+     private lateinit var j:Number
     @Before
     fun setUp() {
         stringHelper = StringHelper()
@@ -72,4 +72,12 @@ class StringHelperTest {
     fun exceptionTest() {
         array.get(10)
     }
+
+    @Test(timeout = 10)
+    fun performanceTest() {
+        for (i in 1 .. 1000000){
+            j=i+1
+        }
+    }
+
 }
