@@ -6,11 +6,12 @@ import org.junit.Test
 
 class StringHelperTest {
     private lateinit var stringHelper: StringHelper
-
+    private lateinit var array: Array<Int>
 
     @Before
     fun setUp() {
         stringHelper = StringHelper()
+
     }
 
     @Test
@@ -61,4 +62,10 @@ class StringHelperTest {
         assertFalse(stringHelper.areFirstAndLastTwoCharactersTheSame("CDAA"))
     }
 
+    @Test
+    fun compareArraysTest() {
+        array = arrayOf(3, 2, 0, 1)
+        array.sort()
+        assertArrayEquals(arrayOf(0, 1, 2, 3), array)
+    }
 }
