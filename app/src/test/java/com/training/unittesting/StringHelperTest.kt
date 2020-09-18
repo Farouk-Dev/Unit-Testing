@@ -1,13 +1,18 @@
 package com.training.unittesting
 
 import org.junit.After
+import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 
-import org.junit.Assert.*
-
 class StringHelperTest {
-    private var stringHelper = StringHelper()
+    private lateinit var stringHelper: StringHelper
+
+
+    @Before
+    fun setUp() {
+        stringHelper = StringHelper()
+    }
 
     @Test
     fun truncateAInFirst2PositionsTest1() {
@@ -32,24 +37,29 @@ class StringHelperTest {
         // CDAA -> CDAA
         assertEquals("CDAA", stringHelper.truncateAInFirst2Positions("CDAA"))
     }
+
     @Test
-    fun areFirstAndLastTwoCharactersTheSameTest1(){
+    fun areFirstAndLastTwoCharactersTheSameTest1() {
         // A -> false
         assertFalse(stringHelper.areFirstAndLastTwoCharactersTheSame("A"))
     }
+
     @Test
-    fun areFirstAndLastTwoCharactersTheSameTest2(){
+    fun areFirstAndLastTwoCharactersTheSameTest2() {
         // AC -> true
         assertTrue(stringHelper.areFirstAndLastTwoCharactersTheSame("AC"))
     }
+
     @Test
-    fun areFirstAndLastTwoCharactersTheSameTest3(){
+    fun areFirstAndLastTwoCharactersTheSameTest3() {
         // CACA -> true
         assertTrue(stringHelper.areFirstAndLastTwoCharactersTheSame("CACA"))
     }
+
     @Test
-    fun areFirstAndLastTwoCharactersTheSameTest4(){
+    fun areFirstAndLastTwoCharactersTheSameTest4() {
         //  CDAA -> false
         assertFalse(stringHelper.areFirstAndLastTwoCharactersTheSame("CDAA"))
     }
+
 }
